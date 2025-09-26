@@ -67,10 +67,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp ESCAPE  &kp GRAVE  &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS     &kp INS    &kp PAGE_UP      &kp UP_ARROW   &kp PAGE_DOWN     &kp DEL    &kp BACKSPACE
-&kp LCTRL   &kp LBKT   &kp RBKT           &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS    &kp HOME   &kp LEFT_ARROW   &kp DOWN       &kp RIGHT         &kp COLON  &kp BACKSLASH
-&kp LSHFT   &kp CARET  &kp ASTERISK       &kp AMPS              &kp PIPE               &kp EQUAL    &kp END    &kp PRINTSCREEN  &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp RSHFT
-                                          &kp ESCAPE            &kp SPACE              &kp TAB      &kp ENTER  &kp BACKSPACE    &kp DEL
+&kp ESCAPE  &kp GRAVE  &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS     &kp HOME   &none          &kp PAGE_UP    &kp END           &trans     &kp BACKSPACE
+&kp LCTRL   &kp LBKT   &kp RBKT           &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS    &kp LEFT   &kp DOWN       &kp UP_ARROW   &kp RIGHT         &kp SEMI   &kp BACKSLASH
+&kp LSHFT   &kp CARET  &kp ASTERISK       &kp AMPS              &kp PIPE               &kp EQUAL    &trans     &kp PAGE_DOWN  &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp RSHFT
+                                          &kp ESCAPE            &kp SPACE              &kp TAB      &kp ENTER  &kp BACKSPACE  &kp DEL
             >;
 
             label = "Sym_Nav";
@@ -109,7 +109,7 @@
             bindings = <
 &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
 &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT    &none         &none         &none           &none  &none  &none  &none  &none  &none
-&none           &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+&studio_unlock  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
                                             &none         &none         &none           &none  &none  &none
             >;
 
