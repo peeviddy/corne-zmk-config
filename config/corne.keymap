@@ -10,9 +10,9 @@
 
 / {
     behaviors {
-        hml: hml {
+        hrml: hrml {
             compatible = "zmk,behavior-hold-tap";
-            label = "for LGUI and LALT";
+            label = "HRML";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -24,9 +24,9 @@
             require-prior-idle-ms = <150>;
         };
 
-        hmr: hmr {
+        hrmr: hrmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "for RGUI and RALT";
+            label = "HRMR";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -42,33 +42,30 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-
+        base_layer {
             display-name = "base";
             bindings = <
-&kp ESC    &kp Q  &kp W        &kp F        &kp P      &kp B        &kp J        &kp L          &kp U        &kp Y        &kp SQT   &kp BSPC
-&kp LCTRL  &kp A  &hml LALT R  &hml LGUI S  &kp T      &kp G        &kp M        &kp N          &hmr RGUI E  &hmr RALT I  &kp O     &kp RGUI
-&kp LSHFT  &kp Z  &kp X        &kp C        &kp D      &kp V        &kp K        &kp H          &kp COMMA    &kp DOT      &kp FSLH  &kp RSHIFT
-                               &kp ESC      &kp SPACE  &lt 1 TAB    &lt 2 ENTER  &kp BACKSPACE  &lt 3 DEL
+&kp ESC    &kp Q  &kp W         &kp F         &kp P      &kp B        &kp J        &kp L          &kp U         &kp Y         &kp SQT   &kp BSPC
+&kp LCTRL  &kp A  &hrml LALT R  &hrml LGUI S  &kp T      &kp G        &kp M        &kp N          &hrmr RGUI E  &hrmr RALT I  &kp O     &kp RGUI
+&kp LSHFT  &kp Z  &kp X         &kp C         &kp D      &kp V        &kp K        &kp H          &kp COMMA     &kp DOT       &kp FSLH  &kp RSHIFT
+                                &kp ESC       &kp SPACE  &lt 1 TAB    &lt 2 ENTER  &kp BACKSPACE  &lt 3 DEL
             >;
         };
 
-        Sym_Nav_Layer {
-
-            display-name = "Lower";
+        nav_layer {
+            display-name = "nav";
             bindings = <
-&kp ESC    &kp GRAVE  &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS     &kp HOME   &none          &kp PAGE_UP    &kp END           &trans     &kp BACKSPACE
-&kp LCTRL  &kp LBKT   &kp RBKT           &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS    &kp LEFT   &kp DOWN       &kp UP_ARROW   &kp RIGHT         &kp SEMI   &kp BACKSLASH
-&kp LSHFT  &kp CARET  &kp ASTERISK       &kp AMPS              &kp PIPE               &kp EQUAL    &trans     &kp PAGE_DOWN  &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp RSHFT
-                                         &kp ESC               &kp SPACE              &kp TAB      &kp ENTER  &kp BACKSPACE  &kp DEL
+&kp ESC    &kp GRAVE  &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS     &kp HOME      &none              &kp PAGE_UP    &kp LA(RIGHT)     &kp END    &kp BACKSPACE
+&kp LCTRL  &kp LBKT   &kp RBKT           &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS    &kp LEFT      &kp DOWN           &kp UP_ARROW   &kp RIGHT         &kp SEMI   &kp BACKSLASH
+&kp LSHFT  &kp CARET  &kp ASTERISK       &kp AMPS              &kp PIPE               &kp EQUAL    &kp LA(LEFT)  &kp PAGE_DOWN      &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp RSHFT
+                                         &kp ESC               &kp SPACE              &kp TAB      &kp ENTER     &kp LA(BACKSPACE)  &kp DEL
             >;
 
             label = "Sym_Nav";
         };
 
-        NumRow {
-
-            display-name = "Raise";
+        num_layer {
+            display-name = "nums";
             bindings = <
 &kp ESC    &kp N1    &kp N2  &kp N3    &kp N4      &kp N5         &kp N6     &kp N7     &kp N8     &kp N9         &kp N0     &kp BACKSPACE
 &kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS   &kp ASTRK  &kp SEMICOLON  &kp COLON  &kp MINUS
@@ -79,7 +76,7 @@
             label = "NumRow";
         };
 
-        F_Num_Layer {
+        fnum_layer {
             bindings = <
 &kp TILDE  &kp F1   &kp F2   &kp F3        &kp F4     &kp F5     &kp INSERT  &kp N7           &kp N8  &kp N9  &kp MINUS  &kp STAR
 &kp CARET  &kp F6   &kp F7   &kp F8        &kp F9     &kp F10    &kp HOME    &kp N4           &kp N5  &kp N6  &kp PLUS   &kp FSLH
@@ -87,7 +84,7 @@
                              &kp LEFT_ALT  &kp SPACE  &tog 3     &tog 3      &kp KP_NUMBER_0  &mo 4
             >;
 
-            label = "F_Num";
+            label = "fnums";
         };
 
         macro_layer {
@@ -98,7 +95,7 @@
                                             &none         &none         &none           &none  &none  &none
             >;
 
-            label = "Macro";
+            label = "macro";
         };
     };
 };
