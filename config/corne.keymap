@@ -61,7 +61,7 @@
                                          &kp ESC               &kp SPACE              &kp TAB      &kp ENTER     &kp LA(BACKSPACE)  &kp DEL
             >;
 
-            label = "Sym_Nav";
+            label = "nav";
         };
 
         num_layer {
@@ -73,7 +73,7 @@
                              &kp LGUI  &kp SPACE   &kp ENTER      &kp RET    &kp SPACE  &mo 4
             >;
 
-            label = "NumRow";
+            label = "nums";
         };
 
         fnum_layer {
